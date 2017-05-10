@@ -68,5 +68,5 @@ cmake: $(SRC)/$(CMAKE)/README
 .PHONY: llvm
 llvm: $(SRC)/$(LLVM)/README.txt
 	rm -rf $(BUILD)/$(LLVM) ; mkdir $(BUILD)/$(LLVM)
-	cd $(BUILD)/$(LLVM) ; cmake $(SRC)/$(LLVM)
+	cd $(BUILD)/$(LLVM) ; cmake $(SRC)/$(LLVM) && make install
 
