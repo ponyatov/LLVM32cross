@@ -1,0 +1,7 @@
+*~
+*.swp
+gz/
+src/
+build/
+tmp/
+mingw32/
