@@ -63,10 +63,11 @@ CFG_T = configure --prefix=$(TOOL)
 .PHONY: cmake
 cmake: $(SRC)/$(CMAKE)/README
 	rm -rf $(BUILD)/$(CMAKE) ; mkdir $(BUILD)/$(CMAKE)
-	cd $(BUILD)/$(CMAKE) ; $(SRC)/$(CMAKE)/$(CFG_T)
+	cd $(BUILD)/$(CMAKE) ; $(SRC)/$(CMAKE)/$(CFG_T) && make install
 
 .PHONY: llvm
 llvm: $(SRC)/$(LLVM)/README.txt
 	rm -rf $(BUILD)/$(LLVM) ; mkdir $(BUILD)/$(LLVM)
-	cd $(BUILD)/$(LLVM) ; cmake $(SRC)/$(LLVM)
+	cd $(BUILD)/$(LLVM) ; cmake -DCMAKE_INSTALL_PREFIX=$(PFX) -DBUILD_SHARED_LIBS=On $(SRC)/$(LLVM)
+	# && make install
 
