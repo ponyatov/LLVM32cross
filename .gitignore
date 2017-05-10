@@ -4,4 +4,5 @@ gz/
 src/
 build/
 tmp/
+tool/
 mingw32/
